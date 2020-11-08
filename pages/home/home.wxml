@@ -1,0 +1,10 @@
+<!-- 1.轮播图 -->
+<m-swiper class="swiper" list="{{banner}}" />
+
+<!-- 2.推荐数据 -->
+<m-recommend list="{{recommend}}" />
+
+<!-- 3.展示本周流行 -->
+<m-popular/>
+
+<tab-control bind:itemHandel="handelItem"/>

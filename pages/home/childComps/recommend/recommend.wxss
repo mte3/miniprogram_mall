@@ -1,0 +1,18 @@
+.recommend{
+    display: flex;
+    width: 100%;
+    padding: 16rpx 0;
+    border-bottom: 16rpx solid #eee;
+}
+.rem-item{
+    flex: 1;
+    margin: 16rpx;
+    font-size: 28rpx;
+    text-align: center;
+    color: #555;
+}
+.rem-image{
+    height: 148rpx;
+    height: 148rpx;
+    width: 100%;
+}

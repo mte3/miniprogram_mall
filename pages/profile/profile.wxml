@@ -1,0 +1,4 @@
+<!--pages/profile/profile.wxml-->
+<text>pages/profile/profile.wxml</text>
+<import src="../../wxml/templste.wxml"/>
+<template is="try" data="{{btn:'按钮',mes:'烦烦烦方法'}}"></template>

@@ -1,0 +1,6 @@
+<template name="try">
+	<view>
+		<button>{{btn}}</button>
+		<view>{{mes}}</view>
+	</view>
+</template>

@@ -1,0 +1,8 @@
+/* components/swiper/swiper.wxss */
+.swiper-image{
+    width: 100%;
+    height: 100%;
+}
+.swiper{
+    height: 376rpx;
+}
