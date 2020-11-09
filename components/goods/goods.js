@@ -1,4 +1,4 @@
-// pages/home/childComps/recommend/recommend.js
+// components/goods/goods.js
 Component({
     /**
      * 组件的属性列表
@@ -14,7 +14,6 @@ Component({
      * 组件的初始数据
      */
     data: {
-        isLoad:false
 
     },
 
@@ -22,12 +21,6 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        imageLoad(){
-            if(!this.data.isLoad){
-                this.triggerEvent('imageLoad')
-                this.data.isLoad = true
-            }
-            
-        }
+
     }
 })

@@ -2,9 +2,17 @@
 <m-swiper class="swiper" list="{{banner}}" />
 
 <!-- 2.推荐数据 -->
-<m-recommend list="{{recommend}}" />
+<m-recommend list="{{recommend}}" bind:imageLoad="imageLoad"/>
 
 <!-- 3.展示本周流行 -->
-<m-popular/>
+<m-popular />
 
-<tab-control bind:itemHandel="handelItem"/>
+<!-- 4.展示商品类型 -->
+<tab-control id="tab-control" class='{{isTabFixed? "top":""}}' bind:itemHandel="handelItem" />
+<tab-control id="tab-control" wx:if="{{isTabFixed}}" bind:itemHandel="handelItem" />
+
+<!-- 5.展示商品数据 -->
+<m-goods class="goods" list="{{goods[currentType].list}}" />
+
+<!-- 返回顶部按钮 -->
+<m-backTop wx:if="{{isShowBackTop}}" class="backTop" />

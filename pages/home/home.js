@@ -6,6 +6,7 @@ import {
     getHomeGoods
 } from '../../service/home'
 
+const types = ['pop', 'new', 'sell']
 Page({
     //-----------1.初始化数据-------
     data: {
@@ -30,25 +31,28 @@ Page({
                 list: []
             },
         },
+        isShowBackTop: false,
+        tabTop: 0,
+        isTabFixed: false
     },
 
     //-----------2.监听wxml中相关事件-----
     handelItem(event) {
         const index = event.detail.index
+        // this.setData({
+        //     currentIndex: index
+        // })
         this.setData({
-            currentIndex: index
+            currentType: types[index]
         })
-        // switch (index) {
-        //     case 0:
-        //         this.currentType = 'pop'
-        //         break
-        //     case 1:
-        //         this.currentType = 'new'
-        //         break
-        //     case 2:
-        //         this.currentType = 'sell'
-        //         break
-        // }
+
+    },
+    imageLoad() {
+        wx.createSelectorQuery().select("#tab-control").boundingClientRect(rect => {
+            this.setData({
+                tabTop: rect.top
+            })
+        }).exec()
 
     },
 
@@ -70,15 +74,16 @@ Page({
         })
     },
 
-    _getHomeGoods(type) {
+    _getHomeMes1(type) {
 
-        const page = this.goods[type].page + 1
+
+        let page = this.data.goods[type].page + 1
 
         getHomeGoods(type, page).then(res => {
             console.log(res);
-            
+
             const list = res.data.data.list
-            const tryList = this.goods[type].list;
+            const tryList = this.data.goods[type].list
             tryList.push(...list)
             const typeKey = `goods.${type}.list`
             const pageKey = `goods.${type}.page`
@@ -97,10 +102,10 @@ Page({
         // 页面被加载出来时调用
         this._getHomeMes()
 
-        // this._getHomeGoods()
-        this._getHomeGoods('pop')
-        this._getHomeGoods('new')
-        this._getHomeGoods('sell')
+        //请求商品数据
+        this._getHomeMes1("pop")
+        this._getHomeMes1('new')
+        this._getHomeMes1('sell')
     },
     onShow() {
         // 页面显示出来时调用
@@ -120,13 +125,26 @@ Page({
 
     //监听滚动
     onPageScroll(scroll) {
-        // console.log(scroll);
+        let sTop = scroll.scrollTop
+        let show = sTop > 800
+        if (show != this.data.isShowBackTop) {
+            this.setData({
+                isShowBackTop: show
+            })
+        }
 
+        let isFixed = sTop >= this.data.tabTop
+        if (isFixed != this.data.isTabFixed) {
+            this.setData({
+                isTabFixed: isFixed
+            })
+        }
     },
 
     //监听页面滚动到底部
     onReachBottom() {
-        // console.log('页面滚动到底部');
+        //上拉加载更多
+        this._getHomeMes1(this.data.currentType)
 
     },
 

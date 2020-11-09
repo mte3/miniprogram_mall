@@ -1,0 +1,3 @@
+<view bindtap="handelBackTop">
+	<image  class="backTop"src="/assets/img/common/top.png"></image>
+</view>

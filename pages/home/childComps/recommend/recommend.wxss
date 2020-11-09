@@ -2,7 +2,6 @@
     display: flex;
     width: 100%;
     padding: 16rpx 0;
-    border-bottom: 16rpx solid #eee;
 }
 .rem-item{
     flex: 1;
