@@ -1,14 +1,13 @@
-// components/goods-item/goods-item.js
+// components/goodDetail/goodDetail.js
 Component({
     /**
      * 组件的属性列表
      */
     properties: {
-        list:{
+        goods:{
             type:Object,
             value:{}
         }
-        
     },
 
     /**
@@ -22,11 +21,6 @@ Component({
      * 组件的方法列表
      */
     methods: {
-        handelGood(){
-            const iid = this.data.list.iid;
-            wx.redirectTo({
-                url: '/pages/detail/detail?iid=' + iid,
-              })
-        }
+
     }
 })

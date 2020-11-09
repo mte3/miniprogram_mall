@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "m-swiper":"/components/swiper/swiper",
+    "m-goods":"/components/goods/goods",
+    "m-goodDetail":"./childComps/goodDetail/goodDetail",
+    "m-commentInfo":"./childComps/commentInfo/commentInfo",
+    "m-shop":"./childComps/shop/shop",
+    "m-detailInfo":"./childComps/detailInfo/detailInfo",
+    "m-goodSize":"./childComps/goodSize/goodSize"
+  },
+  "navigationBarTitleText": "商品详情"
+}

@@ -1,0 +1,18 @@
+
+<view class="good">
+	<view class="goodsTitle">{{goods.title}}</view>
+	<view class="pay">
+		<view class="price">{{goods.price}}</view>
+		<view class="oldPrice">￥{{goods.highPrice}}</view>
+		<view class="priceSpan">{{goods.span}}</view>
+	</view>
+	<view class="sells">
+		<view class="sell" wx:for="{{goods.columns}}" wx:key="index">{{item}}</view>
+	</view>
+	<view class="services">
+		<view wx:for="{{goods.services}}" wx:key="index" class="service">
+			<image class="serviceImg" src="{{item.icon}}" alt=""/>
+			<view>{{item.name}}</view>
+		</view>
+	</view>
+</view>

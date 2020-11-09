@@ -1,16 +1,16 @@
-// components/swiper/swiper.js
+// pages/detail/childComps/goodSize/goodSize.js
 Component({
     /**
      * 组件的属性列表
      */
     properties: {
-        list:{
-            type:Array,
-            value:[]
+        params: {
+            type: Object,
+            value: {}
         },
-        H:{
-            type:Number,
-            value:376
+        rule: {
+            type: Object,
+            value: {}
         }
     },
 

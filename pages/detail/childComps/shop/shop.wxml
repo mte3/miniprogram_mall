@@ -1,0 +1,40 @@
+<!--components/shop/shop.wxml-->
+<view class="shopDetail">
+
+	<view class="shop">
+		<image class="shopImg" src="{{shop.logo}}" />
+		<view class="shopT">
+			<view class="shopMid">
+				<text class="shopName">{{shop.name}}</text>
+				<view class="shop-item goods">在架商品 {{shop.goods}}</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="shopUnder">
+		<view class="underLeft">
+			<view class="shop-item fans">
+				{{fans}}
+				<view class="text">关注</view>
+			</view>
+			<view class="shop-item sells">
+				{{sells}}
+				<view class="text">总销量</view>
+			</view>
+		</view>
+
+		<view class="underRight">
+			<view wx:for="{{shop.score}}" wx:key="index" class="score">
+				<view class="scoreTitle">{{item.name}}</view>
+				<view class="scoreN" :class="{isBetter:item.isBetter}">{{item.score}}</view>
+				<view wx:if="item.isBetter" class="gao">高</view>
+				<view wx:else="item.isBetter" class="di">低</view>
+			</view>
+		</view>
+	</view>
+
+	<!-- <a :href="shop.url">
+		<view class="come">进店逛逛</view>
+	</a> -->
+
+</view>

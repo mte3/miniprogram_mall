@@ -1,0 +1,29 @@
+<!--components/commentInfo/commentInfo.wxml-->
+<view class="commentInfo">
+	<view class="comments">
+		<view class="comment">宝贝评价({{rate.cRate}})</view>
+		<view class="more">
+			<image class="icon" src="/assets/img/detail/right.png"/>
+			<view class="moreP">查看全部
+			</view>
+		</view>
+	</view>
+	<view class="mes" wx:for="{{rate.list}}" wx:key="index">
+		<view class="user">
+			<image class="userImg" src="{{item.user.avatar}}" />
+			<view>
+				<view class="name">{{item.user.uname}}</view>
+				<view class="timeS">
+					<text class="getTime">{{dataTime}} </text>
+					<text> | </text>
+					<text class="choice" wx:for=" {{item.style}}" wx:key="index"> {{item}}</text>
+				</view>
+			</view>
+		</view>
+		<view class="commentMes">{{item.content}}</view>
+
+		<view class="contextImage">
+			<image class="images" :class="{imageS :m=== 1 || m ===4 || m===7}" wx:for="{{item.images}}" src="{{item}}" wx:key="index"/>
+		</view>
+	</view>
+</view>

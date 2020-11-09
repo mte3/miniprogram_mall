@@ -1,0 +1,78 @@
+/* components/goodDetail/goodDetail.wxss */
+.good {
+    padding: 24rpx 24rpx 0 24rpx;
+  }
+
+  .goodsTitle {
+    letter-spacing: 1rpx;
+    font-weight: 700;
+    font-size: 32rpx;
+    color: black;
+  }
+
+  .price {
+    color: #ff5777;
+    font-size: 48rpx;
+    display: inline
+  }
+
+  .oldPrice {
+    padding-top: 12rpx;
+    letter-spacing: -2rpx;
+    display: inline;
+    font-size: 24rpx;
+    text-decoration-line: line-through;
+  }
+
+  .priceSpan {
+    border-radius: 8rpx;
+    padding: 2rpx;
+    margin-left: 12rpx;
+    display: inline;
+    font-size: 24rpx;
+    background-color: #ff5777;
+    color: white;
+  }
+
+  .pay {
+    width: 100%;
+    padding-top: 16rpx;
+  }
+
+  .serviceImg {
+    width: 24rpx;
+    height: 24rpx;
+    float: left;
+    margin-right: 6rpx;
+  }
+
+  .service {
+    flex: 1;
+    font-size: 20rpx;
+    float: left;
+  }
+
+  .services {
+    display: flex;
+    margin-top: 24rpx;
+    padding: 32rpx 0;
+    border-top: 1rpx solid #d4ccc6;
+    color: grey;
+  }
+
+  .sells {
+    display: flex;
+    width: 100%;
+    padding-top: 32rpx;
+    font-size: 22rpx;
+  }
+  .sell{
+    flex: 1;
+  }
+
+
+  .desc {
+    padding: 16rpx;
+    text-indent: 2em;
+    font-size: 24rpx;
+  }

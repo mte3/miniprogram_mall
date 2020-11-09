@@ -1,0 +1,16 @@
+/* pages/detail/childComps/detailInfo/detailInfo.wxss */
+.detailInfo{
+    border-top: 12rpx solid #eee;
+    width: 100%;
+  }
+  .detailImage{
+    width: 100%;
+  }
+    .text{
+      font-size: 28rpx;
+      padding: 48rpx 24rpx 24rpx 24rpx;
+      letter-spacing: 2rpx;
+    }
+    .imgKey{
+      padding: 24rpx;
+    }

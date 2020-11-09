@@ -61,6 +61,7 @@ Page({
         getHomeMultidata().then(res => {
             //取出数据
             const banner = res.data.data.banner.list
+            
             const recommend = res.data.data.recommend.list
             const dKeyWord = res.data.data.keywords.list
             //储存数据
@@ -76,12 +77,9 @@ Page({
 
     _getHomeMes1(type) {
 
-
         let page = this.data.goods[type].page + 1
 
         getHomeGoods(type, page).then(res => {
-            console.log(res);
-
             const list = res.data.data.list
             const tryList = this.data.goods[type].list
             tryList.push(...list)
@@ -106,6 +104,7 @@ Page({
         this._getHomeMes1("pop")
         this._getHomeMes1('new')
         this._getHomeMes1('sell')
+        
     },
     onShow() {
         // 页面显示出来时调用

@@ -1,7 +1,7 @@
-<swiper class="swiper" interval="3000" indicator-dots indicator-active-color="#FF5777" autoplay circular>
+<swiper class="swiper" style="height:{{H}}rpx" interval="3000" indicator-dots indicator-active-color="#FF5777" autoplay circular>
 	<block wx:for="{{list}}" wx:key="index">
 		<swiper-item class="swiper-item">
-			<image class="swiper-image" mode="scaleToFill" src="{{item.image}}" />
+			<image class="swiper-image" mode="widthFix" src="{{item.image? item.image:item}}" />
 		</swiper-item>
 	</block>
 </swiper>

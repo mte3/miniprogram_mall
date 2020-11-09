@@ -1,0 +1,20 @@
+<!--pages/detail/childComps/goodSize/goodSize.wxml-->
+<view class="GoodParams">
+	<view class="key">{{params.key}}</view>
+	<view wx:for="{{params.set}}" class="params" wx:key="index">
+		<view class="title">{{item.key}}</view>
+		<view class="text">{{item.value}}</view>
+	</view>
+	<view class="rule">
+		<view class="rules" wx:for="{{rule.rules}}" wx:key="index">
+			<view class="rulesItem" wx:for="{{item}}" wx:key="index">
+				{{item}}
+			</view>
+		</view>
+
+		<view>{{rule.title}}</view>
+
+		<text class="ruleText">{{rule.text}}</text>
+
+	</view>
+</view>
