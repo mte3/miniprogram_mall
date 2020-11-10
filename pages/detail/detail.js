@@ -5,6 +5,7 @@ import {
     Shop,
     GoodsParam,
     getRecommend,
+    addCart,
 } from '../../service/detail'
 Page({
 
@@ -23,6 +24,11 @@ Page({
         commentInfo: {}, //评论信息
         time: 0, //评论时间
         recommend: [], //推荐数据
+        isShowBackTop: false,
+        handelKey: '', //点击率购物车还是购买
+        choiceShow: {}, //购物车默认选项
+        cart: {},
+        styleChoice: false,
     },
 
     getDetailMes() {
@@ -39,7 +45,7 @@ Page({
             //4.获取商品详细信息
             const detailInfo = data.detailInfo.desc
             const img = data.detailInfo.detailImage[0]
-            
+
             //5.获取参数信息
             const parameter = data.itemParams.info
             const rules = new GoodsParam(data.itemParams.rule)
@@ -51,8 +57,11 @@ Page({
                 time = data.rate.list[0].created
             }
             //7.获取加入购物车数据
-            // const cart = new addCart(data.skuInfo)
-            // const choiceShow = data.skuInfo.skus[0]
+            const cart = new addCart(data.skuInfo)
+            console.log(cart);
+
+            const choiceShow = data.skuInfo.skus[0]
+
             this.setData({
                 swiperImage: swiperImage,
                 goods: goods,
@@ -64,19 +73,52 @@ Page({
                 rules: rules, //商品尺码参数
                 commentInfo: commentInfo, //评论信息
                 time: time, //评论时间
+                cart: cart,
+                choiceShow: false
             })
 
         })
         getRecommend().then(res => {
             const recommend = res.data.data.list
-            console.log(recommend);
-            
+
             this.setData({
                 recommend: recommend, //推荐数据
             })
-          })
+        })
     },
+    addCart() {
+        this.setData({
+            handelKey: 'cart',
+            styleChoice: true
+        })
+        console.log(this.data.handelKey)
+    },
+    buy() {
+        this.setData({
+            handelKey: 'buy',
+            styleChoice: true
+        })
+        console.log(this.data.handelKey);
+    },
+    closeStyleChoice() {
+        this.setData({
+            styleChoice: false,
+        })
+    },
+    handelSure() {
+        if (this.data.handelKey === 'cart') {
+            console.log(this.data.handelKey);
+            this.setData({
+                styleChoice: false,
+            })
+        } else {
+            console.log(this.data.handelKey);
+            this.setData({
+                styleChoice: false,
+            })
+        }
 
+    },
     /**
      * 生命周期函数--监听页面加载
      */
@@ -126,6 +168,16 @@ Page({
 
     },
 
+    onPageScroll: function (scroll) {
+
+        let sTop = scroll.scrollTop
+        let show = sTop > 800
+        if (show != this.data.isShowBackTop) {
+            this.setData({
+                isShowBackTop: show
+            })
+        }
+    },
     /**
      * 页面上拉触底事件的处理函数
      */

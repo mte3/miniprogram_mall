@@ -2,11 +2,14 @@
   "usingComponents": {
     "m-swiper":"/components/swiper/swiper",
     "m-goods":"/components/goods/goods",
+    "m-backTop":"/components/backTop/backTop",
+    "m-goodAction":"./childComps/goodAction/goodAction",
     "m-goodDetail":"./childComps/goodDetail/goodDetail",
     "m-commentInfo":"./childComps/commentInfo/commentInfo",
     "m-shop":"./childComps/shop/shop",
     "m-detailInfo":"./childComps/detailInfo/detailInfo",
-    "m-goodSize":"./childComps/goodSize/goodSize"
+    "m-goodSize":"./childComps/goodSize/goodSize",
+    "m-styleChoice":"./childComps/styleChoice/styleChoice"
   },
   "navigationBarTitleText": "商品详情"
 }

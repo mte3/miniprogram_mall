@@ -4,6 +4,9 @@
 <m-goodDetail goods="{{goods}}" />
 <m-commentInfo rate="{{commentInfo}}" time="{{time}}" />
 <m-shop shop="{{shop}}" />
-<!-- <m-detailInfo detailInfo="{{detailInfo}}" img="{{img}}" /> -->
-<m-goodSize params="{{parameter}}" rule="{{rules}}"/>
-<m-goods list="{{recommend}}"/>
+<m-detailInfo detailInfo="{{detailInfo}}" img="{{img}}" />
+<m-goodSize params="{{parameter}}" rule="{{rules}}" />
+<m-goods list="{{recommend}}" />
+<m-backTop wx:if="{{isShowBackTop}}" class="backTop" />
+<m-goodAction class="fixed" bind:addCart="addCart" bind:buy="buy" />
+<m-styleChoice class="choice" wx:if="{{styleChoice}}" cart="{{cart}}" handelKey="{{handelKey}}" choiceShow="{{choiceShow}}" bind:closeStyleChoice="closeStyleChoice" bind:handelSure="handelSure" />

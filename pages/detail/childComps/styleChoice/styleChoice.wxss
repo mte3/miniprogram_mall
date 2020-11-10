@@ -1,0 +1,110 @@
+.styleChoice {
+    overflow: hidden;
+    width: 100%;
+    padding: 24rpx;
+    height: 80vh;
+    background-color: white;
+}
+
+.Selected {
+    padding-bottom: 12px;
+    height: 112px;
+    font-size: 14px;
+    display: flex;
+}
+
+.isImage {
+    margin-right: 24rpx;
+    width: 160rpx;
+    height: 200rpx;
+}
+
+.price {
+    color: #ff5777;
+    padding-bottom: 16rpx;
+}
+
+.back {
+    position: absolute;
+    top: 24rpx;
+    right: 24rpx;
+}
+
+.choiced {
+    padding-top: 12rpx;
+    font-size: 24rpx;
+}
+
+.choice {
+    word-wrap: break-word;
+    word-break: normal;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.list {
+    font-size: 24rpx;
+    border-radius: 8rpx;
+    padding: 8rpx 24rpx;
+    background-color: #ded6d0;
+    margin: 24rpx 24rpx 0 24rpx;
+}
+
+.choiceSize {
+    margin-bottom: 12rpx;
+}
+
+.size {
+    margin-bottom: 24rpx;
+}
+
+.nums {
+    margin: 12px 24px 0 0;
+    padding: 12px 0 12px 0;
+    border-bottom: #d4ccc6 1px solid;
+    display: flex;
+}
+
+.num {
+    text-align: right;
+    display: flex;
+}
+
+.m {
+    flex: 1;
+}
+
+.sure {
+    background-color: #ff5777;
+    height: 36px;
+    line-height: 36px;
+    text-align: center;
+    position: absolute;
+    bottom: 4px;
+    color: white;
+    letter-spacing: 6px;
+    width: calc(100% - 24px);
+    border-radius: 12px;
+}
+
+.numItem {
+    display: inline;
+    margin: 0 2px 0 2px;
+    background-color: #e0dad5;
+    padding: 6px 12px 6px 12px;
+}
+
+.activeSize {
+    background-color: #ff8198;
+    color: white;
+}
+
+.activeColor {
+    background-color: #ff8198;
+    color: white;
+}
+
+
+
+ 
+

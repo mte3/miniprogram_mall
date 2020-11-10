@@ -1,0 +1,43 @@
+.goodsAction {
+    background-color: white;
+    height: 98rpx;
+    display: flex;
+    border-top: solid 1rpx #eee;
+  }
+
+  .mid {
+    border-left: 1px solid #d4ccc6;
+    border-right: 1px solid #d4ccc6;
+  }
+
+  .left {
+    padding-top: 16rpx;
+    font-size: 24rpx;
+    text-align: center;
+    flex: 1;
+  }
+
+  .leftImg {
+    margin-bottom: 4rpx;
+    width: 36rpx;
+    height: 36rpx;
+  }
+
+  .box {
+    flex: 2;
+    line-height: 98rpx;
+    font-size: 32rpx;
+    text-align: center;
+  }
+
+  .addCart {
+    color: red;
+    background-color: #ff8198;
+
+  }
+
+  .buy {
+    background-color: #ff5777;
+    color: white;
+
+  }

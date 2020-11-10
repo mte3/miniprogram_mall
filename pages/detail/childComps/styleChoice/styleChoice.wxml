@@ -1,0 +1,41 @@
+<view class="styleChoice">
+	<view class="Selected">
+		<image class="isImage" src="{{Show.img?Show.img:cart.show[0].img}}" />
+		<view class="Selecteds">
+			<view class="price">￥{{(Show.nowprice?Show.nowprice:cart.show[0].nowprice)/100}}.00</view>
+			<text>库存充足</text>
+			<view class="choiced">
+				<view class="choiceSize" wx:if="{{sizeIndex===index}}" wx:for="{{cart.size}}" wx:key="index">已选：{{item.name}}</view>
+				<view wx:if="{{colorIndex===index}}" wx:for="{{cart.color}}" wx:key="index">{{item.name}}</view>
+			</view>
+		</view>
+		<view bindtap="back" class="back">
+			<image src="/assets/img/detail/close.png" style="width: 16px;height: 16px" />
+		</view>
+	</view>
+
+	<text>{{cart.sizeTitle}}</text>
+	<view class="choice size">
+		<view class="{{sizeIndex ===index?activeSize:''}}" class="list sizeLis" bindtap="choiceSize(s.sizeId,indexS)" wx:for="{{cart.size}}" wx:key="index">
+			{{item.name}}
+		</view>
+	</view>
+
+	<text>{{cart.colorTitle}}</text>
+	<view class="choice color">
+		<view class="list colorLis" :class="{{colorIndex === index?activeColor:''}}" bindtap="choiceColor(c.styleId,indexC)" wx:for="{{cart.color}}" wx:key="index">
+			{{item.name}}
+		</view>
+	</view>
+
+	<view class="nums">
+		<div class="m">购买数量</div>
+		<view class="num">
+			<view class="numItem" bindtap="numSub">-</view>
+			<view class="numItem">{{num}}</view>
+			<view class="numItem" bindtap="numAdd">+</view>
+		</view>
+	</view>
+	<view style="height: 24px"></view>
+	<view class="sure" bindtap="handelSure">确定</view>
+</view>

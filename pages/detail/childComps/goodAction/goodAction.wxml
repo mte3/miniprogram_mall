@@ -1,0 +1,8 @@
+  <view class="goodsAction">
+  	<view class="left {mid:index ===1}" bindtap="Handel" data-index="{{index}}" wx:for="{{actionLeft}}" wx:key="index">
+  		<image class="leftImg" src="{{item.icon}}"/>
+  			<view>{{item.title}}</view>
+  	</view>
+  	<view class="box addCart" bindtap="addCart">加入购物车</view>
+  	<view class="box buy" bindtap="Buy">立即购买</view>
+  </view>
