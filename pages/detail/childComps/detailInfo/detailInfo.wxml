@@ -1,7 +1,7 @@
 <!--pages/detail/childComps/detailInfo/detailInfo.wxml-->
 <view class="detailInfo">
 	<view class="text">{{detailInfo}}</view>
-	<text class="imgKey">{{img.key}}</text>
+	<view class="imgKey">{{img.key}}</view>
 	<view wx:for="{{img.list}}" wx:key="index">
 		<image src="{{item}}" mode="widthFix" class="detailImage"/>
 	</view>

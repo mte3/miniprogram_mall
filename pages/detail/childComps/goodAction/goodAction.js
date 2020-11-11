@@ -55,7 +55,7 @@ Component({
                             title: '客服',
                         },
                         {
-                            icon: '/assets/img/detail/isHandel.png',
+                            icon: '/assets/img/detail/ishandel.png',
                             title: '已收藏',
                         },
                     ],

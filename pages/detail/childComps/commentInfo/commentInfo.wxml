@@ -15,7 +15,7 @@
 				<view class="name">{{item.user.uname}}</view>
 				<view class="timeS">
 					<text class="getTime">{{dataTime}} </text>
-					<text> | </text>
+					<text class="getTimes">  {{a}}  </text>
 					<text class="choice" wx:for=" {{item.style}}" wx:key="index"> {{item}}</text>
 				</view>
 			</view>

@@ -75,7 +75,6 @@ Component({
                 sizeIndex: sizeIndex
             })
             this.getShow()
-            console.log(this.data.Show);
 
 
         },
@@ -87,14 +86,13 @@ Component({
                 colorIndex: styleIndex
             })
             this.getShow()
-            console.log(this.data.Show);
         },
         getShow() {
             // const Show = this.data.cart.show.find(function (i) {
             //     return this.data.cart.show[i].sizeId === this.data.sizeId &&
             //         this.data.cart.show[i].styleId === this.data.styleId
             // })
-            for (let i = 0; i < this.data.cart.show.length - 1; i++) {
+            for (let i = 0; i < this.data.cart.show.length; i++) {
                 if (this.data.cart.show[i].sizeId === this.data.sizeId &&
                     this.data.cart.show[i].styleId === this.data.styleId) {
                     this.setData({

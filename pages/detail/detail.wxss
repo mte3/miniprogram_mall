@@ -1,19 +1,22 @@
 /* pages/detail/detail.wxss */
-.topImage{
+.topImage {
     height: 800rpx;
 }
-.backTop{
+
+.backTop {
     position: fixed;
     right: 24rpx;
     bottom: 108rpx;
 }
-.fixed{
+
+.fixed {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
 }
-.choice{
+
+.choice {
     z-index: 999;
     position: fixed;
     bottom: 0rpx;
@@ -21,7 +24,7 @@
     right: 0;
 }
 
- 
+
 .bg {
     position: fixed;
     top: 0;
@@ -33,4 +36,4 @@
     -moz-opacity: 0.7;
     opacity: 0.70;
     filter: alpha(opacity=70);
-  }
+}

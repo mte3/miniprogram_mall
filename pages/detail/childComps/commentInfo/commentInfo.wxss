@@ -50,7 +50,7 @@
     font-size: 32rpx;
 }
 
-.commentMes{
+.commentMes {
     padding: 24rpx 0;
     letter-spacing: 1px;
     font-size: 26rpx;
@@ -74,4 +74,15 @@
 .choice {
     font-size: 22rpx;
     color: grey;
+}
+
+.getTime {
+    font-size: 22rpx;
+    color: grey;
+}
+
+.getTimes {
+    font-size: 28rpx;
+    color: grey;
+    margin: 0 12rpx;
 }

@@ -13,4 +13,5 @@
     }
     .imgKey{
       padding: 24rpx;
+      font-size: 36rpx;
     }
