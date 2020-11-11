@@ -3,7 +3,7 @@
 	<view class="comments">
 		<view class="comment">宝贝评价({{rate.cRate}})</view>
 		<view class="more">
-			<image class="icon" src="/assets/img/detail/right.png"/>
+			<image class="icon" src="/assets/img/detail/right.png" />
 			<view class="moreP">查看全部
 			</view>
 		</view>
@@ -23,7 +23,7 @@
 		<view class="commentMes">{{item.content}}</view>
 
 		<view class="contextImage">
-			<image class="images" :class="{imageS :m=== 1 || m ===4 || m===7}" wx:for="{{item.images}}" src="{{item}}" wx:key="index"/>
+			<image class='images {{(index== 1 || index==4 || index ==7) ? "imageS" : ""}}' wx:for="{{item.images}}" src="{{item}}" wx:key="index" />
 		</view>
 	</view>
 </view>

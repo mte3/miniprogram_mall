@@ -16,14 +16,14 @@
 
 	<text>{{cart.sizeTitle}}</text>
 	<view class="choice size">
-		<view class="{{sizeIndex ===index?activeSize:''}}" class="list sizeLis" bindtap="choiceSize(s.sizeId,indexS)" wx:for="{{cart.size}}" wx:key="index">
+		<view class='list sizeLis {{sizeIndex ===index?" activeSize":""}}' bindtap="choiceSize" data-size="{{item.sizeId}}" data-index="{{index}}" wx:for="{{cart.size}}" wx:key="index">
 			{{item.name}}
 		</view>
 	</view>
 
 	<text>{{cart.colorTitle}}</text>
 	<view class="choice color">
-		<view class="list colorLis" :class="{{colorIndex === index?activeColor:''}}" bindtap="choiceColor(c.styleId,indexC)" wx:for="{{cart.color}}" wx:key="index">
+		<view class='list colorLis {{colorIndex === index?" activeColor":""}}' bindtap="choiceColor" data-style="{{item.styleId}}" data-index="{{index}}" wx:for="{{cart.color}}" wx:key="index">
 			{{item.name}}
 		</view>
 	</view>

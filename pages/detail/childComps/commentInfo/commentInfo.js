@@ -17,6 +17,16 @@ Component({
         }
     },
 
+    observers: {
+        'time': function (time) {
+            const time1 = time * 1000
+            const date = new Date(time1)
+            const times = formatDate(date, 'yyyy-MM-dd hh:mm')
+            this.setData({
+                dataTime: times
+            })
+        }
+    },
     /**
      * 组件的初始数据
      */
@@ -24,14 +34,6 @@ Component({
         dataTime: ''
     },
 
-    ready() {
-        const time = this.data.time * 1000
-        const date = new Date(time)
-        const times = formatDate(date, 'yyyy-MM-dd hh:mm')
-        this.setData({
-            dataTime: times
-        })
-    },
     /**
      * 组件的方法列表
      */

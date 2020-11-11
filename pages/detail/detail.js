@@ -1,4 +1,5 @@
 // pages/detail/detail.js
+const app = getApp()
 import {
     getDetail,
     Goods,
@@ -26,7 +27,6 @@ Page({
         recommend: [], //推荐数据
         isShowBackTop: false,
         handelKey: '', //点击率购物车还是购买
-        choiceShow: {}, //购物车默认选项
         cart: {},
         styleChoice: false,
     },
@@ -58,9 +58,6 @@ Page({
             }
             //7.获取加入购物车数据
             const cart = new addCart(data.skuInfo)
-            console.log(cart);
-
-            const choiceShow = data.skuInfo.skus[0]
 
             this.setData({
                 swiperImage: swiperImage,
@@ -74,7 +71,6 @@ Page({
                 commentInfo: commentInfo, //评论信息
                 time: time, //评论时间
                 cart: cart,
-                choiceShow: false
             })
 
         })
@@ -101,18 +97,85 @@ Page({
         console.log(this.data.handelKey);
     },
     closeStyleChoice() {
+        //点击X按钮，隐藏样式选择
         this.setData({
             styleChoice: false,
         })
     },
-    handelSure() {
+    hideview() {
+        //点击遮盖层，隐藏样式选择
+        this.setData({
+            styleChoice: false,
+        })
+    },
+    stopMove(){
+        return
+    },
+    // 对比两个对象的值是否完全相等 返回值 true/false
+    isObjectValueEqual(a, b) {
+        //取对象a和b的属性名
+        var aProps = Object.getOwnPropertyNames(a);
+        var bProps = Object.getOwnPropertyNames(b);
+        //判断属性名的length是否一致
+        if (aProps.length != bProps.length) {
+            return false;
+        }
+        //循环取出属性名，再判断属性值是否一致
+        for (var i = 0; i < aProps.length; i++) {
+            var propName = aProps[i];
+            if (a[propName] !== b[propName]) {
+                return false;
+            }
+        }
+        return true;
+    },
+    handelSure(e) {
+        //加入购物车展示数据
+        const orderGoods = {}
+        orderGoods.Show = e.detail.Show
+        orderGoods.num = e.detail.num
+        orderGoods.shopName = this.data.shopName
+        orderGoods.iid = this.data.iid
+        orderGoods.title = this.data.goods.title
+        // console.log(orderGoods);
+        const Shop = []
+
+        Shop.push(orderGoods)
+        // console.log(Shop);
+
         if (this.data.handelKey === 'cart') {
-            console.log(this.data.handelKey);
             this.setData({
                 styleChoice: false,
             })
+            // app.globalData.cart.push(Shop)
+            if (app.globalData.cart.length > 0) {
+                let isShop = false
+                for (let i = 0; i < app.globalData.cart.length; i++) {
+                    if (orderGoods.shopName == app.globalData.cart[i][0].shopName) {
+                        for (let a = 0; a < app.globalData.cart[i].length; a++) {
+                            let appShow = app.globalData.cart[i][a].Show
+                            let styleShow = orderGoods.Show
+                            const c = this.isObjectValueEqual(appShow, styleShow)
+                            if (app.globalData.cart[i][a].iid == orderGoods.iid && c) {
+                                app.globalData.cart[i][a].num += orderGoods.num
+                                break
+
+                            } else {
+                                app.globalData.cart[i].push(orderGoods)
+                                break
+                            }
+                        }
+                        isShop = true
+                        break
+                    }
+                }
+                isShop ? '' : app.globalData.cart.push(Shop)
+            } else {
+                app.globalData.cart.push(Shop)
+            }
+            // console.log(app.globalData.cart);
+
         } else {
-            console.log(this.data.handelKey);
             this.setData({
                 styleChoice: false,
             })
@@ -124,10 +187,10 @@ Page({
      */
     onLoad: function (options) {
 
-        // // 1.获取传入的iid
-        // this.setData({
-        //     iid: options.iid
-        // })
+        // 1.获取传入的iid
+        this.setData({
+            iid: options.iid
+        })
 
         //网络请求
         this.getDetailMes()

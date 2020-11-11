@@ -9,4 +9,6 @@
 <m-goods list="{{recommend}}" />
 <m-backTop wx:if="{{isShowBackTop}}" class="backTop" />
 <m-goodAction class="fixed" bind:addCart="addCart" bind:buy="buy" />
-<m-styleChoice class="choice" wx:if="{{styleChoice}}" cart="{{cart}}" handelKey="{{handelKey}}" choiceShow="{{choiceShow}}" bind:closeStyleChoice="closeStyleChoice" bind:handelSure="handelSure" />
+
+<view class="bg"  bindtap='hideview' wx:if="{{styleChoice}}"></view>
+<m-styleChoice catch:touchmove="stopMove" class="choice" wx:if="{{styleChoice}}" cart="{{cart}}" styleChoiceKey="{{handelKey}}" bind:closeStyleChoice="closeStyleChoice" bind:handelSure="handelSure" />
