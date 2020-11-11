@@ -3,7 +3,7 @@
 <m-swiper class="topImage" H="{{836}}" list="{{swiperImage}}" />
 <m-goodDetail goods="{{goods}}" />
 <m-commentInfo rate="{{commentInfo}}" time="{{time}}" />
-<m-shop shop="{{shop}}" />
+<m-shop shop="{{shop}}" fans="{{fans}}" sells="{{sells}}" />
 <m-detailInfo detailInfo="{{detailInfo}}" img="{{img}}" />
 <m-goodSize params="{{parameter}}" rule="{{rules}}" />
 <m-goods list="{{recommend}}" />

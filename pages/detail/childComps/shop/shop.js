@@ -7,6 +7,14 @@ Component({
         shop: {
             type: Object,
             value: {}
+        },
+        fans:{
+            type:Number,
+            value:0
+        },
+        sells:{
+            type:Number,
+            value:0
         }
     },
 
@@ -14,20 +22,19 @@ Component({
      * 组件的初始数据
      */
     data: {
-        fans: 0,
-        sells: 0
+        fan: 0,
+        sell: 0
     },
 
     observers:{
-        'shop':function(shop){
-            const fansNum = this.getNum(shop.fans)
-            const sellsNum = this.getNum(shop.sells)
+        'fans,sells':function(fans,sells){
+            const fansNum = this.getNum(fans)
+            const sellsNum = this.getNum(sells)
             this.setData({
-                fans: fansNum,
-                sells: sellsNum
+                fan: fansNum,
+                sell: sellsNum,
             })
-            
-        }
+        },
     },
     /**
      * 组件的方法列表

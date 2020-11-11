@@ -24,7 +24,7 @@ Component({
     methods: {
         handelGood(){
             const iid = this.data.list.iid;
-            wx.redirectTo({
+            wx.navigateTo({
                 url: '/pages/detail/detail?iid=' + iid,
               })
         }

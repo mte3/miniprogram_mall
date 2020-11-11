@@ -14,11 +14,11 @@
 	<view class="shopUnder">
 		<view class="underLeft">
 			<view class="shop-item fans">
-				{{fans}}
+				{{fan}}
 				<view class="text">关注</view>
 			</view>
 			<view class="shop-item sells">
-				{{sells}}
+				{{sell}}
 				<view class="text">总销量</view>
 			</view>
 		</view>

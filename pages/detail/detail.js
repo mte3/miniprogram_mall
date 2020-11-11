@@ -29,6 +29,8 @@ Page({
         handelKey: '', //点击率购物车还是购买
         cart: {},
         styleChoice: false,
+        fans:0,
+        sell:0
     },
 
     getDetailMes() {
@@ -42,6 +44,8 @@ Page({
             //3.获取店铺信息
             const shop = new Shop(data.shopInfo)
             const shopName = data.shopInfo.name
+            const fans = shop.fans
+            const sells = shop.sells
             //4.获取商品详细信息
             const detailInfo = data.detailInfo.desc
             const img = data.detailInfo.detailImage[0]
@@ -71,6 +75,8 @@ Page({
                 commentInfo: commentInfo, //评论信息
                 time: time, //评论时间
                 cart: cart,
+                fans:fans,
+                sells:sells
             })
 
         })
