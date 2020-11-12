@@ -1,4 +1,6 @@
 {
-  "usingComponents": {},
-  "navigationBarTitleText": "我的"
+  "usingComponents": {
+    "m-promids":"./proComps/proMids/proMids"
+  },
+  "navigationBarTitleText": "个人中心"
 }

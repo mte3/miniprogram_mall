@@ -1,1 +1,73 @@
-/* pages/profile/profile.wxss */
+/**index.wxss**/
+.userinfo {
+  flex-direction: column;
+  align-items: center;
+  background-color: #ff5777;
+  width: 100%;
+}
+
+.user {
+  display: flex;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: white;
+  font-size: 32rpx;
+  padding-top: 12rpx;
+  margin: 12rpx;
+  width: calc(100% - 324rpx);
+}
+
+.fen {
+  float: left;
+  padding: 6rpx 16rpx;
+  margin: 12rpx 12rpx 0 0;
+  background-color: rgba(1, 1, 1, .1);
+  font-size: 20rpx;
+  border-radius: 16rpx;
+}
+
+.headerList {
+  display: flex;
+}
+
+.headerListItem {
+  text-align: center;
+  padding: 24rpx 0;
+  font-size: 28rpx;
+  color: white;
+  flex: 1;
+  width: 25%;
+}
+
+.icon {
+  display: flex;
+  width: 150rpx;
+  margin-top: 24rpx;
+  text-align: right;
+}
+
+.iconImage {
+  margin-right: 20rpx;
+  width: 48rpx;
+  height: 48rpx;
+}
+.handelLogin{
+  width: 100%;
+  height: 30vh;
+  line-height: 30vh;
+  text-align: center;
+}
+button{
+  background-color: #ff5777;
+  color: white;
+  font-size: 36rpx;
+  letter-spacing: 1px;
+}

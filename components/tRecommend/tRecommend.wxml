@@ -1,0 +1,10 @@
+<!--components/tRecommend/tRecommend.wxml-->
+<view class="recommend">
+	<view class="title">
+		<view class="like">
+			<image class="love" src="/assets/img/profile/mid/love.png" />
+		</view>
+		<view class="text">你可能喜欢</view>
+	</view>
+	<m-goods class="goods" list="{{tRecommend}}" />
+</view>

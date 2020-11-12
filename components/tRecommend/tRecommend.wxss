@@ -1,0 +1,21 @@
+/* components/tRecommend/tRecommend.wxss */
+.title {
+    margin: 24rpx  auto;
+    width: 128px;
+    font-size: 32rpx;
+    text-align: center;
+    display: flex;
+  }
+
+  .love{
+    width: 48rpx;
+    height: 48rpx;
+  }
+
+  .text {
+    color: #ff5777;
+    padding-left: 12rpx;
+    letter-spacing: 1px;
+    height: 48rpx;
+    line-height: 48rpx;
+  }

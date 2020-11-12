@@ -1,4 +1,25 @@
-<!--pages/profile/profile.wxml-->
-<text>pages/profile/profile.wxml</text>
-<import src="../../wxml/templste.wxml"/>
-<template is="try" data="{{btn:'按钮',mes:'烦烦烦方法'}}"></template>
+  <view class="userinfo">
+  	<view class="handelLogin" wx:if="{{!hasUserInfo && canIUse}}"><button open-type="getUserInfo" size="mini" bindgetuserinfo="getUserInfo"> 登录 </button></view>
+  	<block wx:else>
+  		<view class="user">
+  			<image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover" />
+  			<view class="userinfo-nickname">
+  				<view>{{userInfo.nickName}}</view>
+  				<view class="fen">购物值 1230</view>
+  				<view class="fen">成长分 2380</view>
+  			</view>
+  			<view class="icon setting">
+  				<image class="iconImage" src="/assets/img/profile/setting.png" />
+  				<image class="iconImage" src="/assets/img/profile/message.png" />
+  			</view>
+  		</view>
+  		<view class="headerList">
+  			<view wx:for="{{headerList}}" wx:key="index" class="headerListItem">
+  				<view>{{item.num}}</view>
+  				<view style="margin-top: 6px">{{item.title}}</view>
+  			</view>
+  		</view>
+  	</block>
+  </view>
+
+  <m-promids wx:if="{{hasUserInfo}}" />

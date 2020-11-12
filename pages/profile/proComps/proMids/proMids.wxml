@@ -1,0 +1,19 @@
+<view class="Mid">
+	<view class="mids">
+		<block wx:for="{{contentList}}" wx:key="index">
+			<view class="midItem">
+				<image class="itemImg" src="{{item.icon}}" />
+				<view>{{item.t}}</view>
+			</view>
+		</block>
+	</view>
+	<view class="mids">
+		<block wx:for="{{midList}}" wx:key="index">
+			<view class="midItem">
+				<view class="num">{{item.num}}</view>
+				<view>{{item.title}}</view>
+			</view>
+		</block>
+	</view>
+    <m-tRecommend/>
+</view>

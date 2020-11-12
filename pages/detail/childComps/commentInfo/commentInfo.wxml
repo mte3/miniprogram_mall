@@ -1,8 +1,8 @@
 <!--components/commentInfo/commentInfo.wxml-->
 <view class="commentInfo">
 	<view class="comments">
-		<view class="comment">宝贝评价({{rate.cRate}})</view>
-		<view class="more">
+		<view class="comment">宝贝评价({{rate.cRate?rate.cRate:0}})</view>
+		<view class="more" wx:if="{{rate.cRate}}">
 			<image class="icon" src="/assets/img/detail/right.png" />
 			<view class="moreP">查看全部
 			</view>

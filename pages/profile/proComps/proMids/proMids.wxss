@@ -1,0 +1,29 @@
+.mids {
+  background-color: white;
+  display: flex;
+  padding:16rpx;
+  border-radius: 16rpx;
+  margin:0 24rpx 24rpx 24rpx;
+  height: 112rpx;
+}
+
+.midItem {
+  margin-top: 10rpx;
+  font-size: 26rpx;
+  color: #707070;
+  flex: 1;
+  text-align: center;
+}
+
+.itemImg {
+  width: 64rpx;
+  height: 64rpx;
+}
+.num{
+  font-size: 28rpx;
+  margin-bottom: 12rpx;
+}
+.Mid {
+  padding: 24rpx 0;
+  background-color: #e6e6e6;
+}

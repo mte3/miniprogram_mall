@@ -27,14 +27,9 @@
 			<view wx:for="{{shop.score}}" wx:key="index" class="score">
 				<view class="scoreTitle">{{item.name}}</view>
 				<view class="scoreN" :class="{isBetter:item.isBetter}">{{item.score}}</view>
-				<view wx:if="item.isBetter" class="gao">高</view>
-				<view wx:else="item.isBetter" class="di">低</view>
+				<view wx:if="{{item.isBetter}}" class="gao">高</view>
+				<view wx:else="{{item.isBetter}}" class="di">低</view>
 			</view>
 		</view>
 	</view>
-
-	<!-- <a :href="shop.url">
-		<view class="come">进店逛逛</view>
-	</a> -->
-
 </view>

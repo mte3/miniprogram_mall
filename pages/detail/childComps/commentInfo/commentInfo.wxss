@@ -23,7 +23,7 @@
 }
 
 .moreP {
-    padding-top: 8rpx;
+    padding-top: 5.5rpx;
     float: right;
 }
 

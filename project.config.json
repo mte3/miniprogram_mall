@@ -27,7 +27,7 @@
 			"outputPath": ""
 		},
 		"useIsolateContext": true,
-		"useCompilerModule": true,
+		"useCompilerModule": false,
 		"userConfirmedUseCompilerModuleSwitch": false
 	},
 	"compileType": "miniprogram",
@@ -67,8 +67,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/home/home",
-					"pathName": "pages/home/home",
+					"name": "pages/profile/profile",
+					"pathName": "pages/profile/profile",
 					"query": "",
 					"scene": null
 				}
