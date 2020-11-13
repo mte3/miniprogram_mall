@@ -8,25 +8,89 @@ Page({
      */
     data: {
         cart: [],
+        goodsNum: 0,
+        checkNum: 0,
+        allPay: 0,
+        isShow: true
     },
 
+    isShowCart() {
+        let a = true
+        if (app.globalData.cart.length) {
+            a = false
+        } else {
+            a = true
+        }
+        console.log(a);
+        
+        this.setData({
+            isShow: a
+        })
+    },
+    getPrice() {
+        let allPrice = 0
+        for (let i = 0; i < app.globalData.cart.length; i++) {
+            for (let s = 0; s < app.globalData.cart[i].length; s++) {
+                if (app.globalData.cart[i][s].check) {
+                    allPrice += app.globalData.cart[i][s].num * app.globalData.cart[i][s].Show.nowprice / 100
+                }
+            }
+        }
+        console.log(allPrice);
+
+        this.setData({
+            allPay: allPrice
+        })
+    },
+    getGoodsNum() {
+        let goodsNum = 0
+        for (let i = 0; i < app.globalData.cart.length; i++) {
+            for (let s = 0; s < app.globalData.cart[i].length; s++) {
+                const num = app.globalData.cart[i][s].num
+                goodsNum += num
+            }
+        }
+        return goodsNum
+    },
+    getCheckNum() {
+        let all = 0
+        for (let i = 0; i < app.globalData.cart.length; i++) {
+            for (let s = 0; s < app.globalData.cart[i].length; s++) {
+                if (app.globalData.cart[i][s].check) {
+                    all += 1
+                }
+            }
+        }
+        this.setData({
+            checkNum: all
+        })
+    },
     onTabItemTap(item) {
+        this.isShowCart()
         // tab 点击时执行
         this.setData({
-            cart:app.globalData.cart
+            cart: app.globalData.cart
         })
         console.log(app.globalData.cart);
-        
+
+        const goodsNum = this.getGoodsNum()
+
+        this.setData({
+            goodsNum: goodsNum
+        })
+        this.getCheckNum()
+        this.getPrice()
     },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        
+        this.isShowCart()
         this.setData({
-            a: app.globalData.a,
-            cart:app.globalData.cart
+            cart: app.globalData.cart
         })
+        this.getCheckNum()
+        this.getPrice()
     },
 
     /**
@@ -40,7 +104,14 @@ Page({
      * 生命周期函数--监听页面显示
      */
     onShow: function () {
-
+        const goodsNum = this.getGoodsNum()
+        this.setData({
+            goodsNum: goodsNum,
+            // cart: app.globalData.cart
+        })
+        wx.setNavigationBarTitle({
+            title: `购物车(${this.data.goodsNum})`,
+        })
     },
 
     /**

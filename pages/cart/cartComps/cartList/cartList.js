@@ -10,38 +10,135 @@ Component({
 
         cartList: {
             type: Array,
-            value: [
-                [{
-                    Show: {
-                        currency: "￥",
-                        img: "//s3.mogucdn.com/mlcdn/c45406/180808_49a346e41ka1ge449c21kif9bdbdf_640x960.jpg",
-                        nowprice: 8900,
-                        price: 12715,
-                        size: "S",
-                        sizeId: 100,
-                        stock: 1984,
-                        stockId: "116dw0rk",
-                        style: "开衫",
-                        styleId: 1,
-                        xdSkuId: "116dw0rk"
-                    },
-                    iid: "1m70y5k",
-                    num: 1,
-                    shopName: "艾芳女装屋",
-                    title: "2018秋季新款韩版百搭格子长袖衬衫+前短后长针织气质开衫外套+高腰直筒九分牛仔裤三件套装"
-                }]
-            ]
+            value: []
+        },
+        checkNum: {
+            type: Number,
+            value:0
+        },
+        checkPrice: {
+            type:Number
         }
     },
 
     /**
      * 组件的初始数据
      */
-    data: {},
+    data: {
+        stopAllCheck: true,
+        isAllcheck: true,
+    },
     /**
      * 组件的方法列表
      */
     methods: {
+        handelPay(){
+            wx.showToast({
+              title: '页面还没有做好哦，亲~~',
+              icon:"none"
+            })
+        },
+        getPrice() {
+            let allPrice = 0
+            for (let i = 0; i < app.globalData.cart.length; i++) {
+                for (let s = 0; s < app.globalData.cart[i].length; s++) {
+                    if (app.globalData.cart[i][s].check) {
+                        allPrice += app.globalData.cart[i][s].num * app.globalData.cart[i][s].Show.nowprice / 100
+                    }
+                }
+            }
+    
+            this.setData({
+                checkPrice: allPrice
+            })
+        },
+        getCheckNum() {
+            let getCheckNum = 0
+            app.globalData.cart.forEach(i => {
+                i.forEach(a => {
+                    if (a.check) {
+                        getCheckNum += 1
+                    }
+                })
+            })
+            return getCheckNum
 
+        },
+        isSettlementAll() {
+            let isAll = true
+            for (let i = 0; i < app.globalData.cart.length; i++) {
+                for (let s = 0; s < app.globalData.cart[i].length; s++) {
+                    if (!app.globalData.cart[i][s].check) {
+                        isAll = false
+                        break;
+                    }
+                }
+            }
+            this.setData({
+                isAllcheck: isAll
+            })
+
+            return isAll
+        },
+        handelAllCheck() {
+
+            if (this.data.isAllcheck) {
+                app.globalData.cart.forEach(i => {
+                    i.forEach(a => a.check = false)
+                })
+            } else {
+                app.globalData.cart.forEach(i => {
+                    i.forEach(a => a.check = true)
+                })
+            }
+            this.isSettlementAll()
+            let getCheckNum = this.getCheckNum()
+            this.setData({
+                cartList: app.globalData.cart,
+                checkNum: getCheckNum
+            })
+            this.getPrice()
+        },
+        handelCheck(e) {
+            const shopIndex = e.currentTarget.dataset.shopindex
+            const index = e.currentTarget.dataset.index
+            app.globalData.cart[shopIndex][index].check = !app.globalData.cart[shopIndex][index].check
+            this.isSettlementAll()
+            let getCheckNum = this.getCheckNum()
+            this.setData({
+                cartList: app.globalData.cart,
+                checkNum: getCheckNum
+            })
+            this.getPrice()
+        },
+
+        subCartItemNum(e) {
+            const shopIndex = e.currentTarget.dataset.shopindex
+            const index = e.currentTarget.dataset.index
+            if (app.globalData.cart[shopIndex][index].num > 1) {
+                app.globalData.cart[shopIndex][index].num -= 1
+            } else {
+                wx.showToast({
+                    title: '不能再减了，亲 ~ ~ ！',
+                    duration: 1500,
+                    icon: "none",
+                })
+            }
+            this.setData({
+                cartList: app.globalData.cart
+            })
+            this.getPrice()
+        },
+
+        addCartItemNum(e) {
+
+            const shopIndex = e.currentTarget.dataset.shopindex
+            const index = e.currentTarget.dataset.index
+            app.globalData.cart[shopIndex][index].num += 1
+            this.setData({
+                cartList: app.globalData.cart
+            })
+            this.getPrice()
+        },
     }
 })

@@ -1,3 +1,2 @@
-
-<!-- <m-cartNull/> cartList="{{cart}}"-->
-<m-cartList />
+<m-cartNull wx:if="{{isShow}}"/>
+<m-cartList wx:else cartList="{{cart}}" checkNum="{{checkNum}}" checkPrice="{{allPay}}"/>

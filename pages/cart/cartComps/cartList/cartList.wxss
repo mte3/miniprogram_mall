@@ -1,12 +1,32 @@
 /* pages/cart/cartComps/cartList/cartList.wxss */
+.settlement {
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    background-color: white;
+    position: fixed;
+    bottom: 0rpx;
+    left: 0;
+    display: flex;
+    border-top: 1rpx solid #e6e6e6;
+    font-size: 28rpx;
+}
+
 .cart {
     background-color: #e6e6e6;
+    padding: 24rpx 0;
+}
+
+.shop {
+
+    background-color: white;
+    margin: 24rpx 12rpx;
+    border-radius: 12rpx;
 }
 
 .shopItem {
-    background-color: white;
-    margin: 24rpx;
-
+    position: relative;
+    padding-bottom: 24rpx;
 }
 
 .shopIcon {
@@ -18,6 +38,8 @@
 .shopName {
     display: flex;
     font-size: 30rpx;
+    line-height: 48rpx;
+    padding: 24rpx 0;
 }
 
 .good {
@@ -33,16 +55,106 @@
 
 .goodTitle {
     font-size: 30rpx;
-    height: 32rpx;
-    line-height: 32rpx;
+    height: 72rpx;
+    line-height: 36rpx;
     overflow: hidden;
-   
+
 }
-.goodStyle{
+
+.goodStyle {
+    margin: 24rpx 24rpx 24rpx 0;
+    border-radius: 8rpx;
     font-size: 24rpx;
-    padding:6rpx 12rpx;
-    background-color: rgba(1, 1, 1, .2);
+    padding: 6rpx 12rpx;
+    background-color: rgba(1, 1, 1, .1);
 }
-.goodMes{
-     width: calc(100% - 208rpx);
+
+.goodMes {
+    width: calc(100% - 208rpx);
+}
+
+.pay {
+    display: flex;
+}
+
+.price {
+    color: #ff5777;
+    font-size: 32rpx;
+    position: absolute;
+    left: 240rpx;
+    bottom: 24rpx;
+}
+
+.nums {
+    position: absolute;
+    right: 12rpx;
+    bottom: 24rpx;
+    border: grey 1px solid;
+    border-radius: 8rpx;
+    display: flex;
+    text-align: right;
+}
+
+.num {
+    border-right: grey 1px solid;
+    border-left: grey 1px solid;
+    font-size: 28rpx;
+    color: black;
+    padding: 0 24rpx;
+    display: inline;
+}
+
+.icon {
+    color: black;
+    font-size: 32rpx;
+    padding: 0 12rpx 2rpx 12rpx;
+    /* display: inline; */
+}
+
+.sub {
+    padding: 0 16rpx 2rpx 16rpx;
+}
+
+.check {
+    width: 68rpx;
+    line-height: 220rpx;
+}
+
+.choice {
+    width: 48rpx;
+    height: 48rpx;
+    margin-left: 10rpx;
+    text-align: center;
+}
+
+.allCheck {
+    width: 88rpx;
+}
+
+.allchoice {
+    width: 48rpx;
+    height: 48rpx;
+    text-align: center;
+    padding: 22rpx;
+}
+
+.checkPrice {
+    display: flex;
+    margin-left: 36rpx;
+}
+
+.allPay {
+    color: #ff5777;
+    margin-left: 12rpx;
+}
+.btn{
+    position: absolute;
+    width: 176rpx;
+    height: 68rpx;
+    line-height: 68rpx;
+    text-align: center;
+    border-radius: 16rpx;
+    background-color: orangered;
+    right: 24rpx;
+    bottom: 10rpx;
 }

@@ -1,18 +1,48 @@
 <view class="cart">
 
-	<block wx:for="{{cartList}}" wx:key="index">
-		<view class="shopItem" wx:for="{{item}}" wx:key="index">
-			<view class="shopName">
-				<image class="shopIcon" src="/assets/img/cart/shop.png" />
-				<view>{{item.shopName}}</view>
-			</view>
-			<view class="good">
-				<image class="goodImg" src="{{item.Show.img}}"></image>
-				<view class="goodMes">
-					<view class="goodTitle">{{item.title}}</view>
-                    <view class="goodStyle">{{item.Show.style}}，{{item.Show.size}}</view>
+	<block wx:for="{{cartList}}" wx:for-index="shopIndex" wx:for-item="shopItem" wx:key="shopIndex">
+		<view class="shop">
+			<view class="shopItem" wx:for="{{shopItem}}" wx:key="index">
+				<view class="shopName" wx:if="{{index===0}}">
+
+					<image class="shopIcon" src="/assets/img/cart/shop.png" />
+					<view>{{item.shopName}}</view>
+				</view>
+				<view class="good">
+					<view class="check" bindtap="handelCheck" data-shopindex="{{shopIndex}}" data-index="{{index}}">
+						<image wx:if="{{item.check}}" class="choice isCheck" src="/assets/img/cart/isCheck.png" />
+						<image wx:else class="choice noCheck" src="/assets/img/cart/noCheck.png" />
+					</view>
+					<image class="goodImg" src="{{item.Show.img}}" />
+					<view class="goodMes">
+						<view class="goodTitle">{{item.title}}</view>
+						<view class="goodStyle">{{item.Show.style}}，{{item.Show.size}}</view>
+						<view class="pay">
+							<view class="price">￥
+								{{item.Show.nowprice/100}}.00</view>
+							<view class="nums">
+								<view class="icon sub" bindtap="subCartItemNum" data-shopindex="{{shopIndex}}" data-index="{{index}}">-</view>
+								<view class="num">{{item.num}}</view>
+								<view class="icon add" bindtap="addCartItemNum" data-shopindex="{{shopIndex}}" data-index="{{index}}">+</view>
+							</view>
+						</view>
+					</view>
 				</view>
 			</view>
 		</view>
 	</block>
+	<m-tRecommend />
+</view>
+<view class="settlement">
+	<view class="allCheck" bindtap="handelAllCheck">
+		<image wx:if="{{isAllcheck}}" class="allchoice isAllCheck" src="/assets/img/cart/isCheck.png" />
+		<image wx:else class="allchoice noAllCheck" src="/assets/img/cart/noCheck.png" />
+
+	</view>
+	<view>全选</view>
+	<view class="checkPrice">
+		<view>合计:</view>
+		<view class="allPay"> ￥{{ checkPrice}}.00 </view>
+	</view>
+	<view class="btn" bindtap="handelPay">去结算({{checkNum}})</view>
 </view>

@@ -143,6 +143,7 @@ Page({
         orderGoods.shopName = this.data.shopName
         orderGoods.iid = this.data.iid
         orderGoods.title = this.data.goods.title
+        orderGoods.check = true
         // console.log(orderGoods);
         const Shop = []
 
