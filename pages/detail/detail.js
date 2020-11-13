@@ -29,8 +29,8 @@ Page({
         handelKey: '', //点击率购物车还是购买
         cart: {},
         styleChoice: false,
-        fans:0,
-        sell:0
+        fans: 0,
+        sell: 0
     },
 
     getDetailMes() {
@@ -75,8 +75,8 @@ Page({
                 commentInfo: commentInfo, //评论信息
                 time: time, //评论时间
                 cart: cart,
-                fans:fans,
-                sells:sells
+                fans: fans,
+                sells: sells
             })
 
         })
@@ -114,7 +114,7 @@ Page({
             styleChoice: false,
         })
     },
-    stopMove(){
+    stopMove() {
         return
     },
     // 对比两个对象的值是否完全相等 返回值 true/false
@@ -186,6 +186,7 @@ Page({
                 styleChoice: false,
             })
         }
+        console.log(app.globalData.cart);
 
     },
     /**

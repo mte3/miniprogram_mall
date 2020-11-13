@@ -1,5 +1,7 @@
 {
   "usingComponents": {
+    "m-cartNull":"./cartComps/cartNull/cartNull",
+    "m-cartList":"./cartComps/cartList/cartList"
   },
   "navigationBarTitleText": "购物车"
 }

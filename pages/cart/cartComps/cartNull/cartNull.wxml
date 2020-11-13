@@ -1,0 +1,12 @@
+<!--pages/cart/cartComps/cartNull/cartNull.wxml-->
+<view class="cartNull">
+	<view class="center">
+		<image class="cartNullImage" src="/assets/tabbar/active_cart.png" />
+	</view>
+	<view class="center">
+		购物车竟然是空的
+	</view>
+	<view class="center span">在忙也要记得，买点什么犒劳自己呀~</view>
+	<view class="center btn" bindtap="Go">去逛逛</view>
+    <m-tRecommend/>
+</view>

@@ -1,0 +1,48 @@
+/* pages/cart/cartComps/cartList/cartList.wxss */
+.cart {
+    background-color: #e6e6e6;
+}
+
+.shopItem {
+    background-color: white;
+    margin: 24rpx;
+
+}
+
+.shopIcon {
+    width: 48rpx;
+    height: 48rpx;
+    margin: 0 12rpx;
+}
+
+.shopName {
+    display: flex;
+    font-size: 30rpx;
+}
+
+.good {
+    display: flex;
+}
+
+.goodImg {
+    width: 160rpx;
+    height: 220rpx;
+    border-radius: 12rpx;
+    margin-right: 24rpx;
+}
+
+.goodTitle {
+    font-size: 30rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    overflow: hidden;
+   
+}
+.goodStyle{
+    font-size: 24rpx;
+    padding:6rpx 12rpx;
+    background-color: rgba(1, 1, 1, .2);
+}
+.goodMes{
+     width: calc(100% - 208rpx);
+}

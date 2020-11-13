@@ -67,8 +67,8 @@
 			"list": [
 				{
 					"id": 0,
-					"name": "pages/profile/profile",
-					"pathName": "pages/profile/profile",
+					"name": "pages/cart/cart",
+					"pathName": "pages/cart/cart",
 					"query": "",
 					"scene": null
 				}

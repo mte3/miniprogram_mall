@@ -1,18 +1,32 @@
 // pages/cart/cart.js
+//获取应用实例
+const app = getApp()
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-
+        cart: [],
     },
 
+    onTabItemTap(item) {
+        // tab 点击时执行
+        this.setData({
+            cart:app.globalData.cart
+        })
+        console.log(app.globalData.cart);
+        
+    },
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-
+        
+        this.setData({
+            a: app.globalData.a,
+            cart:app.globalData.cart
+        })
     },
 
     /**
