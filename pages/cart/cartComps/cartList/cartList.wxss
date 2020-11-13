@@ -157,4 +157,6 @@
     background-color: orangered;
     right: 24rpx;
     bottom: 10rpx;
+    color: white;
+    font-size: 32rpx;
 }

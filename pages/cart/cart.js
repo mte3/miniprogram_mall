@@ -21,7 +21,6 @@ Page({
         } else {
             a = true
         }
-        console.log(a);
         
         this.setData({
             isShow: a
@@ -36,7 +35,6 @@ Page({
                 }
             }
         }
-        console.log(allPrice);
 
         this.setData({
             allPay: allPrice
@@ -105,10 +103,12 @@ Page({
      */
     onShow: function () {
         const goodsNum = this.getGoodsNum()
+        this.isShowCart()
         this.setData({
             goodsNum: goodsNum,
-            // cart: app.globalData.cart
+            cart: app.globalData.cart
         })
+        this.getCheckNum()
         wx.setNavigationBarTitle({
             title: `购物车(${this.data.goodsNum})`,
         })
