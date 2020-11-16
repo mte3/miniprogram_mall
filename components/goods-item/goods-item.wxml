@@ -1,7 +1,7 @@
 <!--components/goods-item/goods-item.wxml-->
 
 <view class="goods-item" bindtap="handelGood">
-	<image class="itemImage" src="{{list.show.img?list.show.img:list.image}}"></image>
+	<image class="itemImage" src="{{list.image || list.img || list.show.img}}"></image>
 
 	<view class="goods-title">{{list.title}}</view>
 	<view class="prices">

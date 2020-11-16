@@ -1,7 +1,8 @@
-<!--pages/category/category.wxml-->
-<text>pages/category/category.wxml</text>
-<block wx:for='{{choiceImage}}' wx:key="index">
-	<image show-menu-by-longpress 
-    src="{{item}}"></image>
-</block>
-<button bindtap="choiceImg">照片</button>
+<view class='category'>
+  <m-menu categories="{{categories}}"
+          bind:menuclick="menuClick"/>
+  <m-content subcategories="{{categoryData[currentIndex].subcategories}}"
+             categoryDetail="{{categoryData[currentIndex].categoryDetail}}"
+             showGoods="{{showGoods}}"
+             bind:tabHandel="tabHandel"/>
+</view>
