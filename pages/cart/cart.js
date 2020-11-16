@@ -21,7 +21,7 @@ Page({
         } else {
             a = true
         }
-        
+
         this.setData({
             isShow: a
         })
@@ -65,15 +65,10 @@ Page({
     },
     onTabItemTap(item) {
         this.isShowCart()
+        const goodsNum = this.getGoodsNum()
         // tab 点击时执行
         this.setData({
-            cart: app.globalData.cart
-        })
-        console.log(app.globalData.cart);
-
-        const goodsNum = this.getGoodsNum()
-
-        this.setData({
+            cart: app.globalData.cart,
             goodsNum: goodsNum
         })
         this.getCheckNum()
@@ -104,6 +99,8 @@ Page({
     onShow: function () {
         const goodsNum = this.getGoodsNum()
         this.isShowCart()
+
+        this.getPrice()
         this.setData({
             goodsNum: goodsNum,
             cart: app.globalData.cart
