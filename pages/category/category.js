@@ -112,7 +112,6 @@ Page({
   menuClick(e) {
     // 1.改变当前的currentIndex
     const currentIndex = e.detail.currentIndex;
-    console.log(currentIndex);
 
     this.setData({
       currentIndex

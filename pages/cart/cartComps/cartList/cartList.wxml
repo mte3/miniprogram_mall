@@ -19,7 +19,7 @@
 						<view class="goodStyle">{{item.Show.style}}，{{item.Show.size}}</view>
 						<view class="pay">
 							<view class="price">￥
-								{{item.Show.nowprice/100}}.00</view>
+								{{item.Show.nowprice%100 ==0? item.Show.nowprice/100+".00":item.Show.nowprice/100}}</view>
 							<view class="nums">
 								<view class="icon sub" bindtap="subCartItemNum" data-shopindex="{{shopIndex}}" data-index="{{index}}">-</view>
 								<view class="num">{{item.num}}</view>
@@ -42,7 +42,7 @@
 	<view>全选</view>
 	<view class="checkPrice">
 		<view>合计:</view>
-		<view class="allPay"> ￥{{ checkPrice}}.00 </view>
+		<view class="allPay"> ￥{{ checkPrice%1==0?checkPrice+".00":checkPrice}} </view>
 	</view>
 	<view class="btn" bindtap="handelPay">去结算({{checkNum}})</view>
 </view>

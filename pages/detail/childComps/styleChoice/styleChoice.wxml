@@ -2,7 +2,7 @@
 	<view class="Selected">
 		<image class="isImage" src="{{Show.img?Show.img:cart.show[0].img}}" />
 		<view class="Selecteds">
-			<view class="price">￥{{(Show.nowprice?Show.nowprice:cart.show[0].nowprice)/100}}.00</view>
+			<view class="price">￥{{(Show.nowprice?Show.nowprice:cart.show[0].nowprice)/100}}</view>
 			<text>库存充足</text>
 			<view class="choiced">
 				<view class="choiceSize" wx:if="{{sizeIndex===index}}" wx:for="{{cart.size}}" wx:key="index">已选：{{item.name}}</view>
