@@ -1,5 +1,5 @@
 <view class="Mid">
-	<view class="mids">
+	<view class="mids"  bindtap="handelList">
 		<block wx:for="{{contentList}}" wx:key="index">
 			<view class="midItem">
 				<image class="itemImg" src="{{item.icon}}" />
@@ -7,7 +7,7 @@
 			</view>
 		</block>
 	</view>
-	<view class="mids">
+	<view class="mids" bindtap="handelList">
 		<block wx:for="{{midList}}" wx:key="index">
 			<view class="midItem">
 				<view class="num">{{item.num}}</view>

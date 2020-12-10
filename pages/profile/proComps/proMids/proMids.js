@@ -32,6 +32,11 @@ Component({
      * 组件的方法列表
      */
     methods: {
-
+      handelList(){
+        wx.showToast({
+          title: '页面还没有做好哦，亲~~',
+          icon:"none"
+        })
+      }
     }
 })

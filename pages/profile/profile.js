@@ -59,6 +59,12 @@ Page({
           hasUserInfo: true
         })
       },
+      handelList(){
+        wx.showToast({
+            title: '页面还没有做好哦，亲~~',
+            icon:"none"
+          })
+      },
 
     /**
      * 生命周期函数--监听页面初次渲染完成

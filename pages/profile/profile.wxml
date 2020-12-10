@@ -8,13 +8,13 @@
   				<view class="fen">购物值 1230</view>
   				<view class="fen">成长分 2380</view>
   			</view>
-  			<view class="icon setting">
+  			<view class="icon setting" bindtap="handelList">
   				<image class="iconImage" src="/assets/img/profile/setting.png" />
   				<image class="iconImage" src="/assets/img/profile/message.png" />
   			</view>
   		</view>
   		<view class="headerList">
-  			<view wx:for="{{headerList}}" wx:key="index" class="headerListItem">
+  			<view wx:for="{{headerList}}" wx:key="index" class="headerListItem" bindtap="handelList">
   				<view>{{item.num}}</view>
   				<view style="margin-top: 6px">{{item.title}}</view>
   			</view>
