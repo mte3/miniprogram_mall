@@ -8,7 +8,16 @@
 					<image class="shopIcon" src="/assets/img/cart/shop.png" />
 					<view>{{item.shopName}}</view>
 				</view>
-				<view class="good">
+				<view class="good" bindlongpress='longPress' data-index="{{index}}" data-shopindex="{{shopIndex}}">
+
+					<block wx:if="{{showGoodIndex===index&&showShopIndex===shopIndex&&isShowDele}}">
+						<view class="goodDele">
+							<view class="dele deleLike" bindtap="handelLike">相似</view>
+							<view class="dele deleShou" bindtap="handelShou">收藏</view>
+							<view class="dele deleDele" bindtap="handelDele" data-index="{{index}}" data-shopindex="{{shopIndex}}">删除</view>
+						</view>
+					</block>
+
 					<view class="check" bindtap="handelCheck" data-shopindex="{{shopIndex}}" data-index="{{index}}">
 						<image wx:if="{{item.check}}" class="choice isCheck" src="/assets/img/cart/isCheck.png" />
 						<image wx:else class="choice noCheck" src="/assets/img/cart/noCheck.png" />

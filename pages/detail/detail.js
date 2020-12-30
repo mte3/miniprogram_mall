@@ -187,7 +187,7 @@ Page({
                 styleChoice: false,
             })
         }
-        console.log(app.globalData.cart);
+        // console.log(app.globalData.cart);
 
     },
     /**

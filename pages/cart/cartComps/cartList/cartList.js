@@ -14,10 +14,10 @@ Component({
         },
         checkNum: {
             type: Number,
-            value:0
+            value: 0
         },
         checkPrice: {
-            type:Number
+            type: Number
         }
     },
 
@@ -27,16 +27,74 @@ Component({
     data: {
         stopAllCheck: true,
         isAllcheck: true,
+        goodDele: ['相似', '收藏', '删除'],
+        showGoodIndex: 0,
+        showShopIndex: 0,
+        isShowDele: false
     },
     /**
      * 组件的方法列表
      */
     methods: {
-        handelPay(){
-            wx.showToast({
-              title: '页面还没有做好哦，亲~~',
-              icon:"none"
+        longPress(e) {
+            const showGoodIndex = e.currentTarget.dataset.index
+            const showShopIndex = e.currentTarget.dataset.shopindex
+            this.setData({
+                isShowDele: true,
+                showGoodIndex: showGoodIndex,
+                showShopIndex: showShopIndex
             })
+
+        },
+        handelDele(e) {
+            const showGoodIndex = e.currentTarget.dataset.index
+            const showShopIndex = e.currentTarget.dataset.shopindex
+
+            // const shopName = app.globalData.cart[showShopIndex][showGoodIndex].shopName
+            const id = app.globalData.cart[showShopIndex][showGoodIndex].iid
+            const sizeId = app.globalData.cart[showShopIndex][showGoodIndex].Show.sizeId
+            const styleId = app.globalData.cart[showShopIndex][showGoodIndex].Show.styleId
+
+            let cart = app.globalData.cart.filter((a) => {
+                return a.filter((i) => {
+                    return i.iid != id && i.Show.sizeId != sizeId && i.Show.styleId != styleId
+                })
+            })
+            console.log(cart);
+
+            // this.setData({
+            //     cartList: app.globalData.cart,
+            //     checkNum: getCheckNum
+            // })
+
+            this.setData({
+                isShowDele: !this.data.isShowDele
+            })
+            wx.showToast({
+                title: '该功能还没有做好呢，亲~~',
+                icon: "none"
+            })
+        },
+        handelLike() {
+            this.setData({
+                isShowDele: !this.data.isShowDele
+            })
+            wx.showToast({
+                title: '该功能还没有做好呢，亲~~',
+                icon: "none"
+            })
+        },
+        handelShou() {
+            this.setData({
+                isShowDele: !this.data.isShowDele
+            })
+            wx.showToast({
+                title: '该功能还没有做好呢，亲~~',
+                icon: "none"
+            })
+        },
+        handelPay() {
+
         },
         getPrice() {
             let allPrice = 0
@@ -47,7 +105,7 @@ Component({
                     }
                 }
             }
-    
+
             this.setData({
                 checkPrice: allPrice
             })

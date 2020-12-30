@@ -43,8 +43,51 @@
 }
 
 .good {
+    position: relative;
     display: flex;
 }
+
+.goodDele {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 242rpx;
+    display: flex;
+    background-color: rgba(1, 1, 1, .4);
+}
+
+.dele {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    width: 120rpx;
+    height: 120rpx;
+    line-height: 120rpx;
+    background-color: #ff5777;
+    color: white;
+
+    border-radius: 60rpx;
+    text-align: center;
+}
+
+.deleLike {
+    left: 0;
+    margin-left: 60rpx;
+}
+
+.deleShou {
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.deleDele {
+    right: 0;
+    margin-right: 60rpx;
+}
+
+
+
 
 .goodImg {
     width: 160rpx;
@@ -147,7 +190,8 @@
     color: #ff5777;
     margin-left: 12rpx;
 }
-.btn{
+
+.btn {
     position: absolute;
     width: 176rpx;
     height: 68rpx;
