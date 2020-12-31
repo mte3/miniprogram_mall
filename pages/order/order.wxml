@@ -17,4 +17,5 @@
 			<image class="more" src="../../assets/img/common/right.png"></image>
 		</view>
 	</block>
+	<m-orderDetail order="{{order}}" />
 </view>

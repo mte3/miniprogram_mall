@@ -1,5 +1,6 @@
 {
   "usingComponents": {
+    "m-orderDetail":"./orderComps/orderDetail/orderDetail"
   },
   "navigationBarTitleText": "确认订单"
   

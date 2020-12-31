@@ -8,7 +8,8 @@ Page({
     data: {
         adress: null,
         adressDetail: '',
-        isAdress:true
+        isAdress: true,
+        order:null
     },
 
     handelAdress() {
@@ -22,12 +23,15 @@ Page({
                 getApp().globalData.address.detailInfo = res.detailInfo
                 getApp().globalData.address.nationalCode = res.nationalCode
                 getApp().globalData.address.telNumber = res.telNumber
-                console.log(getApp().globalData.address);
-
+                console.log(getApp().globalData.address)
             }
         })
+        let ad = app.globalData.address
+        let adressDetail = ad.cityName + ad.countyName + ad.detailInfo
         this.setData({
-            isAdress:false
+            adress: app.globalData.address,
+            adressDetail: adressDetail,
+            isAdress: false
         })
     },
     /**
@@ -50,10 +54,14 @@ Page({
     onShow: function () {
         let ad = app.globalData.address
         let adressDetail = ad.cityName + ad.countyName + ad.detailInfo
+        let order = app.globalData.orderGoods
         this.setData({
             adress: app.globalData.address,
-            adressDetail: adressDetail
+            adressDetail: adressDetail,
+            order:order
         })
+        console.log(this.data.order);
+        
     },
 
     /**

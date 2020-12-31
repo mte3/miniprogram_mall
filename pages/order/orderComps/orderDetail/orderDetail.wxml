@@ -1,0 +1,19 @@
+<!--pages/order/orderComps/orderDetail/orderDetail.wxml-->
+<view class="orderDetail">
+	<view class="shop">
+		<image class="shopIcon" src="/assets/img/cart/shop.png"></image>
+		<view class="shopName">{{order.shopName}}</view>
+	</view>
+
+	<view class="goodDetail">
+		<view class="gooodImg"><image class="gooodImg" src="{{order.Show.img}}"></image></view>
+		<view class="goodTitle">
+			<view>{{order.title}}</view>
+			<view class="goodStyle">{{order.Show.style}}，{{order.Show.size}}</view>
+		</view>
+		<view class="price">
+			<view>￥{{order.Show.nowprice%1==0?order.Show.nowprice/100+'.00':order.Show.nowprice}}</view>
+			<view class="priceNum">x{{order.num}}</view>
+		</view>
+	</view>
+</view>
