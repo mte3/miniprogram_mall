@@ -117,6 +117,7 @@ Page({
     stopMove() {
         return
     },
+
     // 对比两个对象的值是否完全相等 返回值 true/false
     isObjectValueEqual(a, b) {
         //取对象a和b的属性名
@@ -182,7 +183,11 @@ Page({
             }
             // console.log(app.globalData.cart);
 
-        } else {
+        } else if(this.data.handelKey === 'buy'){
+            app.globalData.orderGoods = orderGoods,
+                wx.navigateTo({
+                    url: '/pages/order/order',
+                })
             this.setData({
                 styleChoice: false,
             })

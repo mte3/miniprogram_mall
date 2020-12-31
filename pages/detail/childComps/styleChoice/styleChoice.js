@@ -45,11 +45,12 @@ Component({
                 wx.showToast({
                     title: '已成功加入购物车',
                 })
-            }else{
-                wx.showToast({
-                  title: '购买页面还没做好哦，亲！',
-                  icon:'none'
-                })
+            }else if(this.data.styleChoiceKey ==='buy'){
+               
+                // wx.showToast({
+                //   title: '购买页面还没做好哦，亲！',
+                //   icon:'none'
+                // })
             }
             const num = this.data.num
             const Show = this.data.Show

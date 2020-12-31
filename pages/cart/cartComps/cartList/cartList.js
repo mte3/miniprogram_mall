@@ -54,13 +54,11 @@ Component({
             const id = app.globalData.cart[showShopIndex][showGoodIndex].iid
             const sizeId = app.globalData.cart[showShopIndex][showGoodIndex].Show.sizeId
             const styleId = app.globalData.cart[showShopIndex][showGoodIndex].Show.styleId
-
-            let cart = app.globalData.cart.filter((a) => {
-                return a.filter((i) => {
-                    return i.iid != id && i.Show.sizeId != sizeId && i.Show.styleId != styleId
-                })
-            })
-            console.log(cart);
+            // let itemCart = cart.forEach((a) => {
+            //     return a.filter((i) => {
+            //         return i.iid != id && i.Show.sizeId != sizeId && i.Show.styleId != styleId
+            //     })
+            // })
 
             // this.setData({
             //     cartList: app.globalData.cart,

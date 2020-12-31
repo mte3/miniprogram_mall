@@ -1,0 +1,20 @@
+<!--pages/order/order.wxml-->
+<view class="orderSure">
+	<block>
+		<view bindtap="handelAdress" wx:if="{{isAdress}}" class="choiceAdress">
+			请选择收货地址
+			<image class="more" src="../../assets/img/common/right.png"></image>
+		</view>
+		<view wx:else bindtap="handelAdress" class="adress">
+			<image class="adressImg" src="../../assets/img/common/map.png" />
+			<view>
+				<view class="userMes">
+					<text>{{adress.name}}</text>
+					<view class="telNum">{{adress.telNumber}}</view>
+				</view>
+				<view class="adressDetail">{{adressDetail}}</view>
+			</view>
+			<image class="more" src="../../assets/img/common/right.png"></image>
+		</view>
+	</block>
+</view>
