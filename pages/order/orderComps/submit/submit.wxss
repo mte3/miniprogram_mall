@@ -1,0 +1,30 @@
+/* pages/order/orderComps/submit/submit.wxss */
+.submit {
+    position: relative;
+    line-height: 120rpx;
+}
+
+.T {
+    position: absolute;
+    right: 24rpx;
+    top: 24rpx;
+    width: 164rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    font-size: 32rpx;
+    text-align: center;
+    color: white;
+    background-color: tomato;
+    border-radius: 24rpx;
+}
+
+.pay {
+    position: absolute;
+    top:4rpx;
+    left: 100rpx;
+    color: tomato;
+}
+
+.all {
+    margin-left: 24rpx;
+}

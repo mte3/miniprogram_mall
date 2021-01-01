@@ -183,8 +183,15 @@ Page({
             }
             // console.log(app.globalData.cart);
 
-        } else if(this.data.handelKey === 'buy'){
+        } else if (this.data.handelKey === 'buy') {
+            app.globalData.isMore = false
+            app.globalData.pay = orderGoods.num * orderGoods.Show.nowprice
+            app.globalData.orderGood = []
+            let good = []
+            good.push(orderGoods)
+            app.globalData.orderGood.push(good)
             app.globalData.orderGoods = orderGoods,
+
                 wx.navigateTo({
                     url: '/pages/order/order',
                 })

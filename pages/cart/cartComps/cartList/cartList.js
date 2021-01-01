@@ -30,7 +30,8 @@ Component({
         goodDele: ['相似', '收藏', '删除'],
         showGoodIndex: 0,
         showShopIndex: 0,
-        isShowDele: false
+        isShowDele: false,
+        checkPrice: 0
     },
     /**
      * 组件的方法列表
@@ -92,7 +93,13 @@ Component({
             })
         },
         handelPay() {
-
+            app.globalData.isMore = true
+            let pay = this.data.checkPrice
+            app.globalData.pay = pay*100
+            
+            wx.navigateTo({
+                url: '/pages/order/order',
+            })
         },
         getPrice() {
             let allPrice = 0
@@ -103,7 +110,6 @@ Component({
                     }
                 }
             }
-
             this.setData({
                 checkPrice: allPrice
             })

@@ -2,9 +2,12 @@ App({
   globalData: {
     token: '',
     cart: [],
-    orderGood: null,
+    orderGoods: null,
+    orderGood: [],
     userInfo: null,
-    address: {}
+    address: {},
+    isMore: true,
+    pay: 0
   },
   /**
    * 当小程序初始化完成时，会触发 onLaunch（全局只触发一次）
@@ -12,7 +15,7 @@ App({
 
 
   onLaunch: function () {
-   
+
 
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []

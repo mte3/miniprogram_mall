@@ -1,0 +1,6 @@
+<!--pages/order/orderComps/submit/submit.wxml-->
+<view class="submit">
+	<view class="all">合计：</view>
+	<view class="pay">￥{{pay/100}}.00</view>
+	<view class="T">提交订单</view>
+</view>

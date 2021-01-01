@@ -19,7 +19,7 @@
 
 .goodDetail {
     display: flex;
-    margin: 12rpx 0;
+    margin: 36rpx 0;
 }
 
 .gooodImg {
@@ -38,18 +38,45 @@
     line-height: 36rpx;
     overflow: hidden; */
 }
-.price{
+
+.price {
     flex: 1;
     text-align: right;
 }
-.priceNum{
+
+.priceNum {
     color: gray;
     font-size: 28rpx;
 }
+
 .goodStyle {
     margin: 24rpx 24rpx 24rpx 0;
     border-radius: 8rpx;
     font-size: 24rpx;
     padding: 6rpx 12rpx;
     background-color: rgba(1, 1, 1, .1);
+}
+
+.mesFlex {
+    margin-top: 12rpx;
+    display: flex;
+    height: 64rpx;
+}
+.moreIcon{
+    position: absolute;
+    right: 24rpx;
+    width: 36rpx;
+    height: 36rpx;
+}
+.mesText{
+    font-size: 28rpx;
+    color: gray;
+}
+.title{
+    width: 136rpx;
+    font-size: 30rpx;
+}
+.box{
+    height: 136rpx;
+    background-color: gray;
 }

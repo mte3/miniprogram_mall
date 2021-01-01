@@ -1,6 +1,9 @@
 {
   "usingComponents": {
-    "m-orderDetail":"./orderComps/orderDetail/orderDetail"
+    "m-orderDetail":"./orderComps/orderDetail/orderDetail",
+    "m-orderAdress":"./orderComps/orderAdress/orderAdress",
+    "m-orderSubmit":"./orderComps/submit/submit"
+
   },
   "navigationBarTitleText": "确认订单"
   

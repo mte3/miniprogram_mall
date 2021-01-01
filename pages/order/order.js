@@ -9,7 +9,10 @@ Page({
         adress: null,
         adressDetail: '',
         isAdress: true,
-        order:null
+        order: null,
+        cartList: [],
+        isMore: true,
+        pay: 0
     },
 
     handelAdress() {
@@ -54,14 +57,21 @@ Page({
     onShow: function () {
         let ad = app.globalData.address
         let adressDetail = ad.cityName + ad.countyName + ad.detailInfo
-        let order = app.globalData.orderGoods
+        let orderGood = app.globalData.orderGood
+        let cartList = app.globalData.cart
+        let isMore = app.globalData.isMore
+        let pay = app.globalData.pay
         this.setData({
             adress: app.globalData.address,
             adressDetail: adressDetail,
-            order:order
+            orderGood: orderGood,
+            cartList: cartList,
+            isMore: isMore,
+            pay: pay
         })
-        console.log(this.data.order);
-        
+        console.log(this.data.orderGood);
+
+
     },
 
     /**

@@ -1,49 +1,18 @@
 /* pages/order/order.wxss */
 .orderSure{
-    width: 100wh;
-    padding: 18rpx;
+    width: 100vw;
+    height: 100vh;
+    padding-top: 24rpx;
+    /* padding: 18rpx; */
     /* background-color: rgba(255, 255, 255, 0.8); */
     background-color: gray;
 }
-.adress{
-    position: relative;
-    display: flex;
-    align-items: center;
-    width:calc(100wh - 36rpx);
-    height: 160rpx ;
-    padding: 16rpx 12rpx;
+.submit{
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
     background-color: white;
-    border-radius: 16rpx;
-}
-.adressImg{
-    width: 68rpx;
-    height: 68rpx;
-    padding: 0 24rpx;
-    /* margin-top: 46rpx; */
-}
-.userMes{
-    display: flex;
-}
-.telNum{
-    color: gray;
-    font-size: 24rpx;
-    margin-left: 1rem;
-    padding-top: 8rpx;
-}
-.adressDetail{
-    margin-top: 16rpx;
-    font-size: 28rpx;
-}
-.more{
-    position: absolute;
-    right: 24rpx;
-    width: 48rpx;
-    height: 48rpx;
-}
-.choiceAdress{
-    width:calc(100wh - 36rpx);
-    padding: 16rpx 24rpx;
-    height:48rpx;
-    background-color: white;
-    border-radius: 16rpx;
+    width: 100vw;
+    height: 120rpx;
 }

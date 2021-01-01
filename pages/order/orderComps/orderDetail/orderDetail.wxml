@@ -1,19 +1,37 @@
-<!--pages/order/orderComps/orderDetail/orderDetail.wxml-->
-<view class="orderDetail">
-	<view class="shop">
-		<image class="shopIcon" src="/assets/img/cart/shop.png"></image>
-		<view class="shopName">{{order.shopName}}</view>
-	</view>
+<!--pages/order/orderComps/orderDetail/orderDetail.wxml  .length===0? cartList:orderGood-->
+<view class="orderDetail" wx:for="{{isMore?cartList:orderGood}}" wx:for-index="shopIndex" wx:for-item="shopItem" wx:key="shopIndex">
+	<view wx:for="{{shopItem}}" wx:for-item="order" wx:key="index">
+		<view class="shop" wx:if="{{index===0}}">
+			<image class="shopIcon" src="/assets/img/cart/shop.png"></image>
+			<view class="shopName">{{order.shopName}}</view>
+		</view>
 
-	<view class="goodDetail">
-		<view class="gooodImg"><image class="gooodImg" src="{{order.Show.img}}"></image></view>
-		<view class="goodTitle">
-			<view>{{order.title}}</view>
-			<view class="goodStyle">{{order.Show.style}}，{{order.Show.size}}</view>
+		<view class="goodDetail">
+			<view class="gooodImg">
+				<image class="gooodImg" src="{{order.Show.img}}"></image>
+			</view>
+			<view class="goodTitle">
+				<view>{{order.title}}</view>
+				<view class="goodStyle">{{order.Show.style}}，{{order.Show.size}}</view>
+			</view>
+			<view class="price">
+				<view>￥{{order.Show.nowprice%1==0?order.Show.nowprice/100+'.00':order.Show.nowprice}}</view>
+				<view class="priceNum">x{{order.num}}</view>
+			</view>
 		</view>
-		<view class="price">
-			<view>￥{{order.Show.nowprice%1==0?order.Show.nowprice/100+'.00':order.Show.nowprice}}</view>
-			<view class="priceNum">x{{order.num}}</view>
+		<view class="moreDel" wx:if="{{index===shopItem.length-1}}">
+
+			<block>
+				<view wx:for="{{moreDel}}" wx:for-index="moreIndex" wx:key="moreIndex" class="mesFlex">
+					<view class="title">{{item.title}}</view>
+					<view class="mesText">{{item.mes}}</view>
+					<image class="moreIcon" src="{{item.url}}"></image>
+				</view>
+			</block>
+			
 		</view>
+
 	</view>
 </view>
+<view class="box"></view>
+
