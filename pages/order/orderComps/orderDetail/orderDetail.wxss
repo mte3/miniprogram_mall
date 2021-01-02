@@ -77,6 +77,6 @@
     font-size: 30rpx;
 }
 .box{
-    height: 136rpx;
-    background-color: gray;
+    height: 144rpx;
+    background-color: #e6e6e6;
 }

@@ -40,7 +40,6 @@ Component({
                     getApp().globalData.address.detailInfo = res.detailInfo
                     getApp().globalData.address.nationalCode = res.nationalCode
                     getApp().globalData.address.telNumber = res.telNumber
-                    console.log(getApp().globalData.address)
                 }
             })
             let ad = app.globalData.address

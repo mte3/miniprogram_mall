@@ -69,7 +69,6 @@ Page({
             isMore: isMore,
             pay: pay
         })
-        console.log(this.data.orderGood);
 
 
     },

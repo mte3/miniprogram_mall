@@ -5,7 +5,7 @@
     padding-top: 24rpx;
     /* padding: 18rpx; */
     /* background-color: rgba(255, 255, 255, 0.8); */
-    background-color: gray;
+    background-color: #e6e6e6;
 }
 .submit{
     position: fixed;
